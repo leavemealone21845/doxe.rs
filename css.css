@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('BrandonGrotesque.otf') format('opentype');
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Brandon Grotesque', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#redirect-link {
+    color: lightblue;
+}
+
+body.show {
+    opacity: 1;
+}
