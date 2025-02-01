@@ -18,7 +18,7 @@
     </style>
 </head>
 <body>
-    <iframe id="proxyFrame"></iframe>
+    <iframe id="proxyFrame" sandbox="allow-top-navigation allow-scripts"></iframe>
     <script>
         document.getElementById("proxyFrame").src = "https://masochi.st" + window.location.pathname;
         const iframe = document.getElementById("proxyFrame");
