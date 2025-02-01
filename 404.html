@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>masochi.st portal</title>
-    <link rel="stylesheet" type="text/css" href="css.css">
-    <script>
-        setTimeout(() => {
-            document.body.classList.add('show');
-        }, 1000);
-
-        const newBase = "https://masochi.st";
-        const path = window.location.pathname;
-        window.location.replace(newBase + path);
-    </script>
+    <title>masochi.st</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: black;
+            overflow: hidden;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
 </head>
 <body>
-    <p>If you are not redirected, <a id="redirect-link" href="#">click here</a>.</p>
+    <iframe id="proxyFrame"></iframe>
     <script>
-        document.getElementById("redirect-link").href = newBase + path;
+        document.getElementById("proxyFrame").src = "https://masochi.st" + window.location.pathname;
     </script>
 </body>
 </html>
