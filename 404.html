@@ -21,6 +21,22 @@
     <iframe id="proxyFrame"></iframe>
     <script>
         document.getElementById("proxyFrame").src = "https://masochi.st" + window.location.pathname;
+        const iframe = document.getElementById("proxyFrame");
+
+        iframe.onload = function() {
+            iframe.contentWindow.document.addEventListener("click", function(event) {
+                let target = event.target;
+
+                while (target && target.tagName !== "A") {
+                    target = target.parentElement;
+                }
+
+                if (target && target.tagName === "A") {
+                    event.preventDefault();
+                    window.location.href = target.href;
+                }
+            });
+        };
     </script>
 </body>
 </html>
